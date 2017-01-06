@@ -1,3 +1,5 @@
+ignored-modules=flask_sqlalchemy
+
 [MASTER]
 
 # Specify a configuration file.
