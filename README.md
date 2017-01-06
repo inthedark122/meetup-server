@@ -31,6 +31,12 @@ Please use command `pip3 -r requirements.txt`
 
 ----------
 
+### Save dependence
+
+After install new package you should save via `pip3 freeze > requirements.txt`
+
+----------
+
 ### Database
 
 You should install posgresql.
