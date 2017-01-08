@@ -2,8 +2,8 @@ from api.restplus import api
 
 from api.parsers import pagination_arguments
 
-from api.reports.serializers import report_post_model, report_list_model, report_model_updater
-from api.reports.business import create_report, delete_report, update_report
+from .serializers import report_post_model, report_response_model, report_list_model
+from .business import create_report, delete_report, update_report
 
 from database.models import Report
 
@@ -29,8 +29,8 @@ class ReportCollection(Resource):
 
         return {'reports': reports}
 
-    @api.expect(report_model_updater)
-    @api.marshal_with(report_post_model)
+    @api.expect(report_post_model)
+    @api.marshal_with(report_response_model)
     def post(self):
         """
         Update report
@@ -44,7 +44,7 @@ class ReportCollection(Resource):
 @api.response(404, 'Report not found.')
 class ReportItem(Resource):
 
-    @api.marshal_with(report_post_model)
+    @api.marshal_with(report_response_model)
     def get(self, id):
         """
         Get report by id
@@ -53,8 +53,8 @@ class ReportItem(Resource):
 
         return {'report': report}
 
-    @api.expect(report_model_updater)
-    @api.marshal_with(report_post_model)
+    @api.expect(report_post_model)
+    @api.marshal_with(report_response_model)
     def put(self, id):
         """
         Update report
