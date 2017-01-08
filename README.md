@@ -27,7 +27,7 @@ Steps for configurarion virtualenv:
 ### Install dependence
 
 For install dependence you can use `requirements.txt`.
-Please use command `pip3 -r requirements.txt`
+Please use command `pip3 install -r requirements.txt`
 
 ----------
 
